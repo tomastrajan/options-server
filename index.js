@@ -10,7 +10,7 @@ const CORS_WHITELIST = [
   'https://option-quote.herokuapp.com',
   'https://option-quote.herokuapp.com',
   'https://options-54580.firebaseapp.com',
-  'http://localhost'
+  'http://localhost:4200'
 ];
 const corsOptions = {
   origin(origin, callback) {
