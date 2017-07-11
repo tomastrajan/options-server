@@ -28,7 +28,7 @@ app.get('/', (request, response) => response.send('Works!'));
 app.get('/chains', (request, response) => {
   const { symbol, date } = request.query;
   fetch(`${API_URL}${symbol}${date ? '?date=' + date : ''}`)
-    .then(res => response.send(res.json()));
+    .then(res => response.send(response.json()));
 });
 
 app.listen(app.get('port'), () =>
