@@ -3,10 +3,8 @@ const cors = require('cors');
 const fetch = require('node-fetch');
 
 const API_URL_CHAINS = 'https://query2.finance.yahoo.com/v7/finance/options/';
-const API_URL_SYMBOL = 'https://autoc.finance.yahoo.com/' +
-  'autoc?query=';
+const API_URL_SYMBOL = 'https://autoc.finance.yahoo.com/autoc?query=';
 const API_SYMBOL_SUFFIX = '&region=US&lang=en';
-//&callback=JSONP_CALLBACK
 
 const CORS_WHITELIST = [
   'https://option-quote.herokuapp.com',
