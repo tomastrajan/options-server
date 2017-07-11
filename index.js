@@ -13,6 +13,9 @@ const CORS_WHITELIST = [
 const corsOptions = {
   origin(origin, callback) {
     console.log('Cors for origin', origin);
+    if (!origin) {
+      callback(null, true);
+    }
     CORS_WHITELIST.indexOf(origin) !== -1
       ? callback(null, true)
       : callback(new Error('Not allowed by CORS'))
