@@ -6,8 +6,8 @@ const API_URL_CHAINS = 'https://query2.finance.yahoo.com/v7/finance/options/';
 const API_URL_SYMBOL = 'https://autoc.finance.yahoo.com/autoc?query=';
 const API_SYMBOL_SUFFIX = '&region=US&lang=en';
 
+const PORT = process.env.PORT || 5000;
 const CORS_WHITELIST = [
-  'https://option-quote.herokuapp.com',
   'https://option-quote.herokuapp.com',
   'https://options-54580.firebaseapp.com',
   'http://localhost:4200'
@@ -22,11 +22,9 @@ const corsOptions = {
 };
 
 const app = express();
-app.set('port', (process.env.PORT || 5000));
 app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (request, response) => response.send('Works!'));
 app.get('/chains', (request, response) => {
   const { symbol, date } = request.query;
   const url = `${API_URL_CHAINS}${symbol}${date ? '?date=' + date : ''}`;
@@ -51,5 +49,7 @@ app.get('/symbol', (request, response) => {
     .catch(err => console.error(err));
 });
 
-app.listen(app.get('port'), () =>
-  console.log('Node app is running on port', app.get('port')));
+app.get('*', (request, response) => response
+  .sendFile(__dirname + '/public/index.html'));
+
+app.listen(PORT, () => console.log('App is running on port', PORT));
