@@ -4,12 +4,15 @@
   "description": "Options server",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "forever -w index.js"
   },
   "dependencies": {
     "cors": "^2.8.3",
     "express": "4.15.2",
-    "node-fetch": "^1.7.1"
+    "forever": "^0.15.3",
+    "node-fetch": "^1.7.1",
+    "node-jsonp": "^1.0.2"
   },
   "repository": {
     "type": "git",
