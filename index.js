@@ -5,7 +5,8 @@ const fetch = require('node-fetch');
 const API_URL = 'https://query2.finance.yahoo.com/v7/finance/options/';
 
 const CORS_WHITELIST = [
-  'https://option-quote.herokuapp.com/',
+  'https://option-quote.herokuapp.com',
+  'https://option-quote.herokuapp.com',
   'https://options-54580.firebaseapp.com',
   'http://localhost'
 ];
